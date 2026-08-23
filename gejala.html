@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keluhan & Gejala - HealthMateAI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="form-container">
+
+        <h1>📝 Keluhan / Gejala</h1>
+
+        <p>Ceritakan apa yang kamu rasakan.</p>
+
+        <input
+            type="text"
+            id="keluhan"
+            placeholder="Keluhan utama"
+        >
+
+        <textarea
+            id="gejala"
+            placeholder="Tuliskan gejala yang kamu rasakan..."
+        ></textarea>
+
+        <select id="durasi">
+            <option value="">Sejak kapan gejala dirasakan?</option>
+            <option value="Hari ini">Hari ini</option>
+            <option value="1-3 hari">1–3 hari</option>
+            <option value="4-7 hari">4–7 hari</option>
+            <option value="Lebih dari 1 minggu">Lebih dari 1 minggu</option>
+        </select>
+
+        <select id="tingkat">
+            <option value="">Seberapa berat keluhannya?</option>
+            <option value="Ringan">Ringan</option>
+            <option value="Sedang">Sedang</option>
+            <option value="Berat">Berat</option>
+        </select>
+
+        <button type="button" onclick="lanjutKeAnalisis()">
+            🔍 Analisis
+        </button>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

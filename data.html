@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Data - HealthMateAI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="form-container">
+
+        <h1>👤 Input Data</h1>
+
+        <p>Isi data dasar terlebih dahulu.</p>
+
+        <input
+            type="text"
+            id="nama"
+            placeholder="Nama / panggilan"
+        >
+
+        <input
+            type="number"
+            id="umur"
+            placeholder="Umur"
+            min="1"
+            max="120"
+        >
+
+        <select id="jenisKelamin">
+            <option value="">Pilih jenis kelamin</option>
+            <option value="Laki-laki">Laki-laki</option>
+            <option value="Perempuan">Perempuan</option>
+        </select>
+
+        <button onclick="simpanData()">Lanjut</button>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
