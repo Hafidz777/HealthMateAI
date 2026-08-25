@@ -1156,6 +1156,7 @@ function kembaliHasil() {
 // AUTO LOAD SESUAI HALAMAN
 // ======================================================
 
+
 document.addEventListener("DOMContentLoaded", function () {
 
     if (document.getElementById("statusAnalisis")) {
@@ -1179,3 +1180,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+
+// ======================================================
+// NAVIGASI DARI HALAMAN HASIL
+// ======================================================
+
+function lanjutKeSaran() {
+    window.location.href = "saran.html";
+}
+
+
+function lanjutKeTandaBahaya() {
+    window.location.href = "bahaya.html";
+}
