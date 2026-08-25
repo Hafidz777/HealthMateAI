@@ -49,17 +49,14 @@ function simpanData() {
         ? jenisKelaminInput.value
         : "";
 
-
     if (!nama || !umur || !jenisKelamin) {
         alert("Silakan lengkapi semua data terlebih dahulu.");
         return;
     }
 
-
     localStorage.setItem("nama", nama);
     localStorage.setItem("umur", umur);
     localStorage.setItem("jenisKelamin", jenisKelamin);
-
 
     window.location.href = "gejala.html";
 }
@@ -91,7 +88,6 @@ const databasePenyakit = [
         ]
     },
 
-
     {
         nama: "Batuk Pilek (Common Cold)",
         gejala: [
@@ -109,7 +105,6 @@ const databasePenyakit = [
             "sulit bernapas"
         ]
     },
-
 
     {
         nama: "Demam Berdarah Dengue (DBD)",
@@ -137,7 +132,6 @@ const databasePenyakit = [
         ]
     },
 
-
     {
         nama: "Gastritis (Maag)",
         gejala: [
@@ -156,7 +150,6 @@ const databasePenyakit = [
             "nyeri perut hebat"
         ]
     },
-
 
     {
         nama: "Diare Akut",
@@ -179,7 +172,6 @@ const databasePenyakit = [
         ]
     },
 
-
     {
         nama: "Migrain",
         gejala: [
@@ -199,7 +191,6 @@ const databasePenyakit = [
         ]
     },
 
-
     {
         nama: "Sakit Kepala Tegang",
         gejala: [
@@ -217,7 +208,6 @@ const databasePenyakit = [
             "kelemahan anggota tubuh"
         ]
     },
-
 
     {
         nama: "Alergi",
@@ -239,7 +229,6 @@ const databasePenyakit = [
         ]
     },
 
-
     {
         nama: "Asma",
         gejala: [
@@ -259,7 +248,6 @@ const databasePenyakit = [
         ]
     },
 
-
     {
         nama: "Bronkitis Akut",
         gejala: [
@@ -277,7 +265,6 @@ const databasePenyakit = [
             "batuk darah"
         ]
     },
-
 
     {
         nama: "Pneumonia",
@@ -300,7 +287,6 @@ const databasePenyakit = [
         ]
     },
 
-
     {
         nama: "Sinusitis",
         gejala: [
@@ -320,7 +306,6 @@ const databasePenyakit = [
         ]
     },
 
-
     {
         nama: "Radang Tenggorokan",
         gejala: [
@@ -337,7 +322,6 @@ const databasePenyakit = [
             "pembengkakan leher"
         ]
     },
-
 
     {
         nama: "Konjungtivitis",
@@ -356,7 +340,6 @@ const databasePenyakit = [
             "sensitif cahaya berat"
         ]
     },
-
 
     {
         nama: "Dermatitis / Eksim",
@@ -377,7 +360,6 @@ const databasePenyakit = [
         ]
     },
 
-
     {
         nama: "Infeksi Saluran Kemih (ISK)",
         gejala: [
@@ -397,7 +379,6 @@ const databasePenyakit = [
         ]
     },
 
-
     {
         nama: "Cacar Air",
         gejala: [
@@ -415,7 +396,6 @@ const databasePenyakit = [
             "ruam dekat mata"
         ]
     },
-
 
     {
         nama: "Anemia",
@@ -436,7 +416,6 @@ const databasePenyakit = [
         ]
     },
 
-
     {
         nama: "GERD / Asam Lambung",
         gejala: [
@@ -455,7 +434,6 @@ const databasePenyakit = [
             "muntah darah"
         ]
     },
-
 
     {
         nama: "Konstipasi / Sembelit",
@@ -476,7 +454,6 @@ const databasePenyakit = [
         ]
     },
 
-
     {
         nama: "Chikungunya",
         gejala: [
@@ -494,7 +471,6 @@ const databasePenyakit = [
             "muntah terus-menerus"
         ]
     },
-
 
     {
         nama: "Campak",
@@ -516,7 +492,6 @@ const databasePenyakit = [
         ]
     },
 
-
     {
         nama: "Gondongan",
         gejala: [
@@ -536,7 +511,6 @@ const databasePenyakit = [
         ]
     },
 
-
     {
         nama: "Faringitis",
         gejala: [
@@ -555,7 +529,6 @@ const databasePenyakit = [
         ]
     },
 
-
     {
         nama: "Tonsilitis",
         gejala: [
@@ -573,7 +546,6 @@ const databasePenyakit = [
             "tidak bisa menelan cairan"
         ]
     },
-
 
     {
         nama: "Otitis Media",
@@ -594,7 +566,6 @@ const databasePenyakit = [
         ]
     },
 
-
     {
         nama: "Gastroenteritis",
         gejala: [
@@ -614,7 +585,6 @@ const databasePenyakit = [
         ]
     },
 
-
     {
         nama: "Vertigo",
         gejala: [
@@ -633,7 +603,6 @@ const databasePenyakit = [
         ]
     },
 
-
     {
         nama: "Insomnia",
         gejala: [
@@ -650,7 +619,6 @@ const databasePenyakit = [
             "pingsan"
         ]
     },
-
 
     {
         nama: "Hipertensi",
@@ -691,7 +659,6 @@ function analisisGejala(teks) {
 
         });
 
-
         return {
             nama: penyakit.nama,
             cocok: gejalaCocok,
@@ -701,7 +668,6 @@ function analisisGejala(teks) {
         };
 
     });
-
 
     return hasil
         .filter(function (item) {
@@ -731,7 +697,6 @@ function lanjutKeAnalisis() {
     const tingkatInput =
         document.getElementById("tingkat");
 
-
     const keluhan = keluhanInput
         ? keluhanInput.value.trim()
         : "";
@@ -748,7 +713,6 @@ function lanjutKeAnalisis() {
         ? tingkatInput.value
         : "";
 
-
     if (!keluhan || !gejala || !durasi || !tingkat) {
 
         alert(
@@ -758,43 +722,21 @@ function lanjutKeAnalisis() {
         return;
     }
 
-
-    localStorage.setItem(
-        "keluhan",
-        keluhan
-    );
-
-    localStorage.setItem(
-        "gejala",
-        gejala
-    );
-
-    localStorage.setItem(
-        "durasi",
-        durasi
-    );
-
-    localStorage.setItem(
-        "tingkat",
-        tingkat
-    );
-
+    localStorage.setItem("keluhan", keluhan);
+    localStorage.setItem("gejala", gejala);
+    localStorage.setItem("durasi", durasi);
+    localStorage.setItem("tingkat", tingkat);
 
     const semuaGejala =
         keluhan + " " + gejala;
 
-
     const hasil =
         analisisGejala(semuaGejala);
 
-
     localStorage.setItem(
         "hasilAnalisis",
-        JSON.stringify(
-            hasil.slice(0, 5)
-        )
+        JSON.stringify(hasil.slice(0, 5))
     );
-
 
     window.location.href =
         "analisis.html";
@@ -802,19 +744,29 @@ function lanjutKeAnalisis() {
 
 
 // ======================================================
-// HASIL
+// HALAMAN ANALISIS
 // ======================================================
 
-function lihatHasil() {
+function tampilkanAnalisis() {
 
-    window.location.href =
-        "hasil.html";
+    const status =
+        document.getElementById("statusAnalisis");
+
+    if (status) {
+        status.textContent =
+            "Analisis selesai. Silakan lihat hasil.";
+    }
 }
 
 
 // ======================================================
-// MENAMPILKAN HASIL
+// HALAMAN HASIL
 // ======================================================
+
+function lihatHasil() {
+    window.location.href = "hasil.html";
+}
+
 
 function tampilkanHasil() {
 
@@ -838,7 +790,6 @@ function tampilkanHasil() {
         localStorage.getItem("tingkat") ||
         "-";
 
-
     const sapaan =
         document.getElementById("sapaan");
 
@@ -854,7 +805,6 @@ function tampilkanHasil() {
     const hasilTingkat =
         document.getElementById("hasilTingkat");
 
-
     if (sapaan) {
 
         sapaan.textContent =
@@ -864,7 +814,6 @@ function tampilkanHasil() {
 
     }
 
-
     if (hasilKeluhan) {
 
         hasilKeluhan.textContent =
@@ -872,7 +821,6 @@ function tampilkanHasil() {
             keluhan;
 
     }
-
 
     if (hasilGejala) {
 
@@ -882,7 +830,6 @@ function tampilkanHasil() {
 
     }
 
-
     if (hasilDurasi) {
 
         hasilDurasi.textContent =
@@ -890,7 +837,6 @@ function tampilkanHasil() {
             durasi;
 
     }
-
 
     if (hasilTingkat) {
 
@@ -908,14 +854,11 @@ function tampilkanHasil() {
     const hasilPenyakit =
         document.getElementById("hasilPenyakit");
 
-
     if (!hasilPenyakit) {
         return;
     }
 
-
     let hasil = [];
-
 
     try {
 
@@ -932,4 +875,307 @@ function tampilkanHasil() {
     }
 
 
-    i
+    if (hasil.length === 0) {
+
+        hasilPenyakit.innerHTML = `
+            <h2>🔍 Hasil Analisis</h2>
+
+            <p>
+                Belum ditemukan kecocokan yang cukup
+                berdasarkan gejala yang dimasukkan.
+            </p>
+
+            <p>
+                Jika keluhan berlanjut atau semakin berat,
+                pertimbangkan untuk berkonsultasi dengan
+                tenaga kesehatan.
+            </p>
+        `;
+
+        return;
+    }
+
+
+    hasilPenyakit.innerHTML = `
+        <h2>🔍 Kemungkinan Kondisi</h2>
+
+        ${hasil.map(function (item) {
+
+            return `
+                <div class="hasil-box">
+
+                    <h3>${item.nama}</h3>
+
+                    <p>
+                        <strong>Gejala yang cocok:</strong>
+                        ${item.cocok.join(", ")}
+                    </p>
+
+                    <p>
+                        <strong>Skor kecocokan:</strong>
+                        ${item.skor}
+                    </p>
+
+                    <p>
+                        <strong>Saran awal:</strong>
+                        ${item.saran}
+                    </p>
+
+                </div>
+            `;
+
+        }).join("")}
+
+        <p>
+            ⚠️ Hasil HealthMateAI merupakan analisis awal
+            dan bukan diagnosis medis.
+        </p>
+    `;
+}
+
+
+// ======================================================
+// SARAN
+// ======================================================
+
+function tampilkanSaran() {
+
+    const saranContainer =
+        document.getElementById("saran");
+
+    if (!saranContainer) {
+        return;
+    }
+
+    let hasil = [];
+
+    try {
+
+        hasil = JSON.parse(
+            localStorage.getItem(
+                "hasilAnalisis"
+            ) || "[]"
+        );
+
+    } catch (error) {
+
+        hasil = [];
+
+    }
+
+    if (hasil.length === 0) {
+
+        saranContainer.innerHTML = `
+            <p>
+                Belum ada hasil analisis untuk diberikan saran.
+            </p>
+        `;
+
+        return;
+    }
+
+
+    saranContainer.innerHTML = `
+        <h2>💡 Saran</h2>
+
+        ${hasil.map(function (item) {
+
+            return `
+                <div class="hasil-box">
+
+                    <h3>${item.nama}</h3>
+
+                    <p>
+                        ${item.saran}
+                    </p>
+
+                </div>
+            `;
+
+        }).join("")}
+
+        <p>
+            ⚠️ Saran ini bersifat umum dan tidak menggantikan
+            pemeriksaan tenaga kesehatan.
+        </p>
+    `;
+}
+
+
+// ======================================================
+// TANDA BAHAYA
+// ======================================================
+
+function tampilkanBahaya() {
+
+    const bahayaContainer =
+        document.getElementById("tandaBahaya");
+
+    if (!bahayaContainer) {
+        return;
+    }
+
+    let hasil = [];
+
+    try {
+
+        hasil = JSON.parse(
+            localStorage.getItem(
+                "hasilAnalisis"
+            ) || "[]"
+        );
+
+    } catch (error) {
+
+        hasil = [];
+
+    }
+
+    if (hasil.length === 0) {
+
+        bahayaContainer.innerHTML = `
+            <p>
+                Belum ada hasil analisis.
+            </p>
+        `;
+
+        return;
+    }
+
+
+    let semuaBahaya = [];
+
+    hasil.forEach(function (item) {
+
+        item.bahaya.forEach(function (bahaya) {
+
+            if (!semuaBahaya.includes(bahaya)) {
+                semuaBahaya.push(bahaya);
+            }
+
+        });
+
+    });
+
+
+    if (semuaBahaya.length === 0) {
+
+        bahayaContainer.innerHTML = `
+            <p>
+                Tidak ada tanda bahaya khusus yang
+                teridentifikasi dari data awal.
+            </p>
+        `;
+
+        return;
+    }
+
+
+    bahayaContainer.innerHTML = `
+        <h2>🚨 Tanda Bahaya</h2>
+
+        <p>
+            Segera cari bantuan medis jika mengalami:
+        </p>
+
+        <ul>
+            ${semuaBahaya.map(function (bahaya) {
+
+                return `
+                    <li>${bahaya}</li>
+                `;
+
+            }).join("")}
+        </ul>
+
+        <p>
+            Jika kondisi terasa sangat berat atau memburuk,
+            segera minta bantuan orang dewasa dan tenaga kesehatan.
+        </p>
+    `;
+}
+
+
+// ======================================================
+// BANTUAN
+// ======================================================
+
+function tampilkanBantuan() {
+
+    const bantuan =
+        document.getElementById("bantuan");
+
+    if (!bantuan) {
+        return;
+    }
+
+    bantuan.innerHTML = `
+        <h2>🏥 Saran Mencari Bantuan</h2>
+
+        <p>
+            HealthMateAI hanya memberikan analisis awal
+            berdasarkan informasi yang dimasukkan pengguna.
+        </p>
+
+        <p>
+            Jika gejala berat, semakin memburuk, atau
+            menimbulkan kekhawatiran, mintalah bantuan
+            orang dewasa dan konsultasikan dengan tenaga kesehatan.
+        </p>
+
+        <p>
+            Dalam keadaan darurat, segera cari pertolongan
+            medis setempat.
+        </p>
+    `;
+}
+
+
+// ======================================================
+// KEMBALI
+// ======================================================
+
+function kembaliHome() {
+    window.location.href = "index.html";
+}
+
+function kembaliData() {
+    window.location.href = "data.html";
+}
+
+function kembaliGejala() {
+    window.location.href = "gejala.html";
+}
+
+function kembaliHasil() {
+    window.location.href = "hasil.html";
+}
+
+
+// ======================================================
+// AUTO LOAD SESUAI HALAMAN
+// ======================================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    if (document.getElementById("statusAnalisis")) {
+        tampilkanAnalisis();
+    }
+
+    if (document.getElementById("hasilPenyakit")) {
+        tampilkanHasil();
+    }
+
+    if (document.getElementById("saran")) {
+        tampilkanSaran();
+    }
+
+    if (document.getElementById("tandaBahaya")) {
+        tampilkanBahaya();
+    }
+
+    if (document.getElementById("bantuan")) {
+        tampilkanBantuan();
+    }
+
+});
