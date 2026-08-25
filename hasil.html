@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
     <title>Hasil - HealthMateAI</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 
 <body>
 
@@ -16,16 +23,51 @@
 
         <p id="sapaan"></p>
 
+
+        <!-- =========================
+             RINGKASAN KELUHAN
+        ========================== -->
+
         <div class="hasil-box">
+
             <h2>Ringkasan Keluhan</h2>
 
             <p id="hasilKeluhan"></p>
+
             <p id="hasilGejala"></p>
+
             <p id="hasilDurasi"></p>
+
             <p id="hasilTingkat"></p>
+
         </div>
 
+
+        <!-- =========================
+             HASIL ANALISIS DATABASE
+        ========================== -->
+
         <div class="hasil-box">
+
+            <h2>🔍 Kemungkinan Kondisi</h2>
+
+            <div id="hasilPenyakit">
+
+                <p>
+                    🔄 Memuat hasil analisis...
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             CATATAN
+        ========================== -->
+
+        <div class="hasil-box">
+
             <h2>⚠️ Catatan</h2>
 
             <p>
@@ -33,13 +75,37 @@
                 HealthMateAI hanya membantu memberikan
                 informasi awal berdasarkan data yang dimasukkan.
             </p>
+
+            <p>
+                Jika keluhan berat, memburuk, atau muncul
+                tanda bahaya, segera cari bantuan medis.
+            </p>
+
         </div>
 
-        <button onclick="lanjutKeSaran()">💡 Lihat Saran</button>
+
+        <!-- =========================
+             TOMBOL
+        ========================== -->
+
+        <button onclick="lanjutKeSaran()">
+            💡 Lihat Saran
+        </button>
+
+        <button onclick="lanjutKeTandaBahaya()">
+            🚨 Cek Tanda Bahaya
+        </button>
+
+        <button onclick="mulai()">
+            🔄 Analisis Lagi
+        </button>
+
 
     </div>
+
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
