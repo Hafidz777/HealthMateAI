@@ -36,11 +36,75 @@
             <option value="Perempuan">Perempuan</option>
         </select>
 
-        <button onclick="simpanData()">Lanjut</button>
+        <button type="button" id="btnLanjut">
+            Lanjut
+        </button>
 
     </div>
 
+
+    <!-- Script utama -->
     <script src="script.js"></script>
+
+
+    <!-- Fungsi khusus halaman data -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const tombol = document.getElementById("btnLanjut");
+
+            tombol.addEventListener("click", function () {
+
+                const nama = document
+                    .getElementById("nama")
+                    .value
+                    .trim();
+
+                const umur = document
+                    .getElementById("umur")
+                    .value
+                    .trim();
+
+                const jenisKelamin = document
+                    .getElementById("jenisKelamin")
+                    .value;
+
+
+                // Validasi
+                if (!nama || !umur || !jenisKelamin) {
+
+                    alert(
+                        "Silakan lengkapi semua data terlebih dahulu."
+                    );
+
+                    return;
+                }
+
+
+                // Simpan data
+                localStorage.setItem(
+                    "nama",
+                    nama
+                );
+
+                localStorage.setItem(
+                    "umur",
+                    umur
+                );
+
+                localStorage.setItem(
+                    "jenisKelamin",
+                    jenisKelamin
+                );
+
+
+                // Pindah ke halaman gejala
+                window.location.href = "gejala.html";
+
+            });
+
+        });
+    </script>
 
 </body>
 </html>
