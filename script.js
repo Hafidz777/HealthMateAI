@@ -1156,7 +1156,6 @@ function kembaliHasil() {
 // AUTO LOAD SESUAI HALAMAN
 // ======================================================
 
-
 document.addEventListener("DOMContentLoaded", function () {
 
     if (document.getElementById("statusAnalisis")) {
@@ -1193,4 +1192,9 @@ function lanjutKeSaran() {
 
 function lanjutKeTandaBahaya() {
     window.location.href = "bahaya.html";
+}
+
+
+function lanjutKeBantuan() {
+    window.location.href = "bantuan.html";
 }
