@@ -1,13 +1,13 @@
 // ======================================================
 // HEALTHMATEAI
-// SCRIPT UTAMA - VERSI DIPERBAIKI
-// Database 30 penyakit/kondisi
+// SCRIPT UTAMA - VERSI FINAL
+// Database 30 penyakit / kondisi
 // ======================================================
 
 
-// =========================
+// ======================================================
 // FUNGSI NORMALISASI
-// =========================
+// ======================================================
 
 function normalisasi(teks) {
     return String(teks || "")
@@ -17,39 +17,49 @@ function normalisasi(teks) {
 }
 
 
-// =========================
-// MULAI
-// =========================
+// ======================================================
+// HALAMAN HOME
+// ======================================================
 
 function mulai() {
     window.location.href = "data.html";
 }
 
 
-// =========================
+// ======================================================
 // INPUT DATA
-// =========================
+// ======================================================
 
 function simpanData() {
 
     const namaInput = document.getElementById("nama");
     const umurInput = document.getElementById("umur");
-    const jenisKelaminInput = document.getElementById("jenisKelamin");
+    const jenisKelaminInput =
+        document.getElementById("jenisKelamin");
 
-    const nama = namaInput ? namaInput.value.trim() : "";
-    const umur = umurInput ? umurInput.value : "";
+    const nama = namaInput
+        ? namaInput.value.trim()
+        : "";
+
+    const umur = umurInput
+        ? umurInput.value.trim()
+        : "";
+
     const jenisKelamin = jenisKelaminInput
         ? jenisKelaminInput.value
         : "";
+
 
     if (!nama || !umur || !jenisKelamin) {
         alert("Silakan lengkapi semua data terlebih dahulu.");
         return;
     }
 
+
     localStorage.setItem("nama", nama);
     localStorage.setItem("umur", umur);
     localStorage.setItem("jenisKelamin", jenisKelamin);
+
 
     window.location.href = "gejala.html";
 }
@@ -64,11 +74,16 @@ const databasePenyakit = [
     {
         nama: "Flu (Influenza)",
         gejala: [
-            "demam", "batuk", "pilek",
-            "sakit tenggorokan", "nyeri otot",
-            "lemas", "menggigil"
+            "demam",
+            "batuk",
+            "pilek",
+            "sakit tenggorokan",
+            "nyeri otot",
+            "lemas",
+            "menggigil"
         ],
-        saran: "Istirahat cukup, minum cairan yang cukup, dan pantau perkembangan gejala.",
+        saran:
+            "Istirahat cukup, minum cairan yang cukup, dan pantau perkembangan gejala.",
         bahaya: [
             "sesak napas berat",
             "nyeri dada berat",
@@ -76,29 +91,42 @@ const databasePenyakit = [
         ]
     },
 
+
     {
         nama: "Batuk Pilek (Common Cold)",
         gejala: [
-            "pilek", "bersin", "batuk",
-            "hidung tersumbat", "hidung berair",
+            "pilek",
+            "bersin",
+            "batuk",
+            "hidung tersumbat",
+            "hidung berair",
             "sakit tenggorokan"
         ],
-        saran: "Istirahat, cukup minum, dan jaga kebersihan tangan.",
+        saran:
+            "Istirahat, cukup minum, dan jaga kebersihan tangan.",
         bahaya: [
             "sesak napas berat",
             "sulit bernapas"
         ]
     },
 
+
     {
         nama: "Demam Berdarah Dengue (DBD)",
         gejala: [
-            "demam tinggi", "demam", "sakit kepala",
-            "nyeri belakang mata", "nyeri otot",
-            "nyeri sendi", "mual", "muntah",
-            "ruam", "bintik merah"
+            "demam tinggi",
+            "demam",
+            "sakit kepala",
+            "nyeri belakang mata",
+            "nyeri otot",
+            "nyeri sendi",
+            "mual",
+            "muntah",
+            "ruam",
+            "bintik merah"
         ],
-        saran: "Jika demam tinggi disertai gejala lain yang mengarah ke dengue, segera periksa ke tenaga kesehatan.",
+        saran:
+            "Jika demam tinggi disertai gejala lain yang mengarah ke dengue, segera periksa ke tenaga kesehatan.",
         bahaya: [
             "nyeri perut hebat",
             "muntah terus-menerus",
@@ -109,16 +137,19 @@ const databasePenyakit = [
         ]
     },
 
+
     {
         nama: "Gastritis (Maag)",
         gejala: [
             "nyeri perut bagian atas",
             "sakit perut bagian atas",
-            "mual", "muntah",
+            "mual",
+            "muntah",
             "perut kembung",
             "perih lambung"
         ],
-        saran: "Perhatikan makanan yang memicu keluhan dan usahakan makan secara teratur.",
+        saran:
+            "Perhatikan makanan yang memicu keluhan dan usahakan makan secara teratur.",
         bahaya: [
             "muntah darah",
             "bab hitam",
@@ -126,14 +157,20 @@ const databasePenyakit = [
         ]
     },
 
+
     {
         nama: "Diare Akut",
         gejala: [
-            "diare", "bab cair", "mencret",
-            "sering bab", "nyeri perut",
-            "kram perut", "mual"
+            "diare",
+            "bab cair",
+            "mencret",
+            "sering bab",
+            "nyeri perut",
+            "kram perut",
+            "mual"
         ],
-        saran: "Perbanyak cairan untuk membantu mencegah dehidrasi.",
+        saran:
+            "Perbanyak cairan untuk membantu mencegah dehidrasi.",
         bahaya: [
             "tidak mampu minum",
             "darah pada tinja",
@@ -142,22 +179,26 @@ const databasePenyakit = [
         ]
     },
 
+
     {
         nama: "Migrain",
         gejala: [
             "sakit kepala berdenyut",
             "kepala berdenyut",
-            "mual", "muntah",
+            "mual",
+            "muntah",
             "sensitif cahaya",
             "sensitif suara"
         ],
-        saran: "Beristirahat di tempat yang tenang dan redup.",
+        saran:
+            "Beristirahat di tempat yang tenang dan redup.",
         bahaya: [
             "sakit kepala sangat mendadak",
             "kelemahan anggota tubuh",
             "gangguan bicara"
         ]
     },
+
 
     {
         nama: "Sakit Kepala Tegang",
@@ -168,7 +209,8 @@ const databasePenyakit = [
             "leher tegang",
             "nyeri bahu"
         ],
-        saran: "Istirahat cukup dan perhatikan posisi tubuh.",
+        saran:
+            "Istirahat cukup dan perhatikan posisi tubuh.",
         bahaya: [
             "sakit kepala sangat mendadak",
             "gangguan penglihatan",
@@ -176,14 +218,20 @@ const databasePenyakit = [
         ]
     },
 
+
     {
         nama: "Alergi",
         gejala: [
-            "bersin", "hidung berair",
-            "hidung gatal", "mata gatal",
-            "ruam", "gatal kulit", "biduran"
+            "bersin",
+            "hidung berair",
+            "hidung gatal",
+            "mata gatal",
+            "ruam",
+            "gatal kulit",
+            "biduran"
         ],
-        saran: "Hindari pemicu alergi yang diketahui.",
+        saran:
+            "Hindari pemicu alergi yang diketahui.",
         bahaya: [
             "sesak napas berat",
             "pembengkakan wajah",
@@ -191,14 +239,19 @@ const databasePenyakit = [
         ]
     },
 
+
     {
         nama: "Asma",
         gejala: [
-            "sesak napas", "mengi",
-            "napas berbunyi", "batuk",
-            "dada terasa sesak", "sulit bernapas"
+            "sesak napas",
+            "mengi",
+            "napas berbunyi",
+            "batuk",
+            "dada terasa sesak",
+            "sulit bernapas"
         ],
-        saran: "Hindari pemicu yang diketahui dan ikuti rencana penanganan dari tenaga kesehatan jika ada.",
+        saran:
+            "Hindari pemicu yang diketahui dan ikuti rencana penanganan dari tenaga kesehatan jika ada.",
         bahaya: [
             "sulit bernapas berat",
             "bibir kebiruan",
@@ -206,14 +259,18 @@ const databasePenyakit = [
         ]
     },
 
+
     {
         nama: "Bronkitis Akut",
         gejala: [
-            "batuk", "dahak",
+            "batuk",
+            "dahak",
             "nyeri dada saat batuk",
-            "lelah", "demam ringan"
+            "lelah",
+            "demam ringan"
         ],
-        saran: "Istirahat dan cukup minum.",
+        saran:
+            "Istirahat dan cukup minum.",
         bahaya: [
             "sesak napas berat",
             "nyeri dada berat",
@@ -221,14 +278,20 @@ const databasePenyakit = [
         ]
     },
 
+
     {
         nama: "Pneumonia",
         gejala: [
-            "demam", "batuk", "dahak",
-            "sesak napas", "nyeri dada",
-            "lemas", "napas cepat"
+            "demam",
+            "batuk",
+            "dahak",
+            "sesak napas",
+            "nyeri dada",
+            "lemas",
+            "napas cepat"
         ],
-        saran: "Pneumonia perlu dinilai oleh tenaga kesehatan, terutama jika disertai sesak.",
+        saran:
+            "Pneumonia perlu dinilai oleh tenaga kesehatan, terutama jika disertai sesak.",
         bahaya: [
             "sesak napas berat",
             "bibir kebiruan",
@@ -237,20 +300,26 @@ const databasePenyakit = [
         ]
     },
 
+
     {
         nama: "Sinusitis",
         gejala: [
-            "hidung tersumbat", "pilek",
-            "nyeri wajah", "sakit wajah",
-            "sakit kepala", "lendir hidung"
+            "hidung tersumbat",
+            "pilek",
+            "nyeri wajah",
+            "sakit wajah",
+            "sakit kepala",
+            "lendir hidung"
         ],
-        saran: "Jaga kecukupan cairan dan periksakan diri jika keluhan semakin berat.",
+        saran:
+            "Jaga kecukupan cairan dan periksakan diri jika keluhan semakin berat.",
         bahaya: [
             "bengkak di sekitar mata",
             "gangguan penglihatan",
             "sakit kepala berat"
         ]
     },
+
 
     {
         nama: "Radang Tenggorokan",
@@ -260,7 +329,8 @@ const databasePenyakit = [
             "demam",
             "tenggorokan merah"
         ],
-        saran: "Istirahat dan cukup minum.",
+        saran:
+            "Istirahat dan cukup minum.",
         bahaya: [
             "sulit bernapas",
             "tidak bisa menelan cairan",
@@ -268,14 +338,18 @@ const databasePenyakit = [
         ]
     },
 
+
     {
         nama: "Konjungtivitis",
         gejala: [
-            "mata merah", "mata berair",
-            "mata gatal", "kotoran mata",
+            "mata merah",
+            "mata berair",
+            "mata gatal",
+            "kotoran mata",
             "belekan"
         ],
-        saran: "Jaga kebersihan tangan dan hindari menggosok mata.",
+        saran:
+            "Jaga kebersihan tangan dan hindari menggosok mata.",
         bahaya: [
             "nyeri mata berat",
             "gangguan penglihatan",
@@ -283,20 +357,26 @@ const databasePenyakit = [
         ]
     },
 
+
     {
         nama: "Dermatitis / Eksim",
         gejala: [
-            "kulit gatal", "kulit kering",
-            "ruam", "kulit kemerahan",
-            "eksim", "dermatitis"
+            "kulit gatal",
+            "kulit kering",
+            "ruam",
+            "kulit kemerahan",
+            "eksim",
+            "dermatitis"
         ],
-        saran: "Hindari pemicu dan jaga kelembapan kulit.",
+        saran:
+            "Hindari pemicu dan jaga kelembapan kulit.",
         bahaya: [
             "luka terinfeksi",
             "demam",
             "pembengkakan berat"
         ]
     },
+
 
     {
         nama: "Infeksi Saluran Kemih (ISK)",
@@ -308,7 +388,8 @@ const databasePenyakit = [
             "nyeri perut bawah",
             "urin keruh"
         ],
-        saran: "Konsultasikan keluhan kepada tenaga kesehatan.",
+        saran:
+            "Konsultasikan keluhan kepada tenaga kesehatan.",
         bahaya: [
             "demam tinggi",
             "nyeri pinggang berat",
@@ -316,14 +397,18 @@ const databasePenyakit = [
         ]
     },
 
+
     {
         nama: "Cacar Air",
         gejala: [
-            "demam", "ruam", "gatal",
+            "demam",
+            "ruam",
+            "gatal",
             "bintil berisi cairan",
             "lepuhan kulit"
         ],
-        saran: "Hindari menggaruk ruam dan batasi kontak dekat dengan orang lain.",
+        saran:
+            "Hindari menggaruk ruam dan batasi kontak dekat dengan orang lain.",
         bahaya: [
             "sesak napas",
             "kesadaran menurun",
@@ -331,20 +416,26 @@ const databasePenyakit = [
         ]
     },
 
+
     {
         nama: "Anemia",
         gejala: [
-            "mudah lelah", "lemas", "pusing",
-            "kulit pucat", "jantung berdebar",
+            "mudah lelah",
+            "lemas",
+            "pusing",
+            "kulit pucat",
+            "jantung berdebar",
             "cepat lelah"
         ],
-        saran: "Keluhan yang mengarah ke anemia perlu dikonfirmasi melalui pemeriksaan kesehatan.",
+        saran:
+            "Keluhan yang mengarah ke anemia perlu dikonfirmasi melalui pemeriksaan kesehatan.",
         bahaya: [
             "sesak napas berat",
             "pingsan",
             "nyeri dada"
         ]
     },
+
 
     {
         nama: "GERD / Asam Lambung",
@@ -356,7 +447,8 @@ const databasePenyakit = [
             "asam ke mulut",
             "sendawa"
         ],
-        saran: "Perhatikan makanan atau kebiasaan yang memicu keluhan.",
+        saran:
+            "Perhatikan makanan atau kebiasaan yang memicu keluhan.",
         bahaya: [
             "nyeri dada berat",
             "sulit menelan",
@@ -364,14 +456,19 @@ const databasePenyakit = [
         ]
     },
 
+
     {
         nama: "Konstipasi / Sembelit",
         gejala: [
-            "sulit bab", "bab jarang",
-            "tinja keras", "feses keras",
-            "perut kembung", "sembelit"
+            "sulit bab",
+            "bab jarang",
+            "tinja keras",
+            "feses keras",
+            "perut kembung",
+            "sembelit"
         ],
-        saran: "Perhatikan kecukupan cairan, serat, dan aktivitas fisik.",
+        saran:
+            "Perhatikan kecukupan cairan, serat, dan aktivitas fisik.",
         bahaya: [
             "nyeri perut hebat",
             "muntah terus-menerus",
@@ -379,14 +476,18 @@ const databasePenyakit = [
         ]
     },
 
+
     {
         nama: "Chikungunya",
         gejala: [
-            "demam", "nyeri sendi",
-            "sakit kepala", "ruam",
+            "demam",
+            "nyeri sendi",
+            "sakit kepala",
+            "ruam",
             "nyeri otot"
         ],
-        saran: "Istirahat, cukup minum, dan konsultasikan kepada tenaga kesehatan.",
+        saran:
+            "Istirahat, cukup minum, dan konsultasikan kepada tenaga kesehatan.",
         bahaya: [
             "sesak napas",
             "kesadaran menurun",
@@ -394,14 +495,19 @@ const databasePenyakit = [
         ]
     },
 
+
     {
         nama: "Campak",
         gejala: [
-            "demam", "batuk", "pilek",
-            "mata merah", "ruam",
+            "demam",
+            "batuk",
+            "pilek",
+            "mata merah",
+            "ruam",
             "bintik merah"
         ],
-        saran: "Hindari kontak dekat dengan orang lain dan konsultasikan kepada tenaga kesehatan.",
+        saran:
+            "Hindari kontak dekat dengan orang lain dan konsultasikan kepada tenaga kesehatan.",
         bahaya: [
             "sesak napas",
             "kesadaran menurun",
@@ -409,6 +515,7 @@ const databasePenyakit = [
             "dehidrasi berat"
         ]
     },
+
 
     {
         nama: "Gondongan",
@@ -420,13 +527,15 @@ const databasePenyakit = [
             "sakit saat mengunyah",
             "nyeri rahang"
         ],
-        saran: "Istirahat dan konsultasikan kepada tenaga kesehatan.",
+        saran:
+            "Istirahat dan konsultasikan kepada tenaga kesehatan.",
         bahaya: [
             "sulit bernapas",
             "sulit menelan",
             "kesadaran menurun"
         ]
     },
+
 
     {
         nama: "Faringitis",
@@ -437,13 +546,15 @@ const databasePenyakit = [
             "tenggorokan merah",
             "suara serak"
         ],
-        saran: "Cukup minum dan istirahat.",
+        saran:
+            "Cukup minum dan istirahat.",
         bahaya: [
             "sulit bernapas",
             "tidak bisa menelan cairan",
             "pembengkakan leher"
         ]
     },
+
 
     {
         nama: "Tonsilitis",
@@ -455,12 +566,14 @@ const databasePenyakit = [
             "demam",
             "bercak putih pada amandel"
         ],
-        saran: "Istirahat dan cukup minum. Periksakan diri jika gejala berat atau berulang.",
+        saran:
+            "Istirahat dan cukup minum. Periksakan diri jika gejala berat atau berulang.",
         bahaya: [
             "sulit bernapas",
             "tidak bisa menelan cairan"
         ]
     },
+
 
     {
         nama: "Otitis Media",
@@ -472,7 +585,8 @@ const databasePenyakit = [
             "pendengaran berkurang",
             "cairan dari telinga"
         ],
-        saran: "Jangan memasukkan benda ke dalam telinga dan konsultasikan jika keluhan berlanjut.",
+        saran:
+            "Jangan memasukkan benda ke dalam telinga dan konsultasikan jika keluhan berlanjut.",
         bahaya: [
             "bengkak di belakang telinga",
             "kesadaran menurun",
@@ -480,20 +594,26 @@ const databasePenyakit = [
         ]
     },
 
+
     {
         nama: "Gastroenteritis",
         gejala: [
-            "diare", "muntah", "mual",
-            "kram perut", "nyeri perut",
+            "diare",
+            "muntah",
+            "mual",
+            "kram perut",
+            "nyeri perut",
             "demam"
         ],
-        saran: "Utamakan cairan dan pantau tanda dehidrasi.",
+        saran:
+            "Utamakan cairan dan pantau tanda dehidrasi.",
         bahaya: [
             "tidak mampu minum",
             "darah pada tinja",
             "pingsan"
         ]
     },
+
 
     {
         nama: "Vertigo",
@@ -504,13 +624,15 @@ const databasePenyakit = [
             "mual",
             "gangguan keseimbangan"
         ],
-        saran: "Duduk atau berbaring di tempat aman saat pusing.",
+        saran:
+            "Duduk atau berbaring di tempat aman saat pusing.",
         bahaya: [
             "kelemahan anggota tubuh",
             "gangguan bicara",
             "sakit kepala sangat mendadak"
         ]
     },
+
 
     {
         nama: "Insomnia",
@@ -521,12 +643,14 @@ const databasePenyakit = [
             "sulit kembali tidur",
             "tidur tidak nyenyak"
         ],
-        saran: "Usahakan jadwal tidur teratur dan kurangi penggunaan layar menjelang tidur.",
+        saran:
+            "Usahakan jadwal tidur teratur dan kurangi penggunaan layar menjelang tidur.",
         bahaya: [
             "kebingungan berat",
             "pingsan"
         ]
     },
+
 
     {
         nama: "Hipertensi",
@@ -535,7 +659,8 @@ const databasePenyakit = [
             "hasil tensi tinggi",
             "tekanan darah meningkat"
         ],
-        saran: "Hipertensi sering tidak menimbulkan gejala. Jika tekanan darah terukur tinggi, konsultasikan kepada tenaga kesehatan.",
+        saran:
+            "Hipertensi sering tidak menimbulkan gejala. Jika tekanan darah terukur tinggi, konsultasikan kepada tenaga kesehatan.",
         bahaya: [
             "nyeri dada berat",
             "sesak napas berat",
@@ -566,6 +691,7 @@ function analisisGejala(teks) {
 
         });
 
+
         return {
             nama: penyakit.nama,
             cocok: gejalaCocok,
@@ -575,6 +701,7 @@ function analisisGejala(teks) {
         };
 
     });
+
 
     return hasil
         .filter(function (item) {
@@ -587,15 +714,23 @@ function analisisGejala(teks) {
 
 
 // ======================================================
-// KELUHAN & GEJALA
+// HALAMAN GEJALA
 // ======================================================
 
 function lanjutKeAnalisis() {
 
-    const keluhanInput = document.getElementById("keluhan");
-    const gejalaInput = document.getElementById("gejala");
-    const durasiInput = document.getElementById("durasi");
-    const tingkatInput = document.getElementById("tingkat");
+    const keluhanInput =
+        document.getElementById("keluhan");
+
+    const gejalaInput =
+        document.getElementById("gejala");
+
+    const durasiInput =
+        document.getElementById("durasi");
+
+    const tingkatInput =
+        document.getElementById("tingkat");
+
 
     const keluhan = keluhanInput
         ? keluhanInput.value.trim()
@@ -613,26 +748,56 @@ function lanjutKeAnalisis() {
         ? tingkatInput.value
         : "";
 
+
     if (!keluhan || !gejala || !durasi || !tingkat) {
-        alert("Silakan lengkapi semua data terlebih dahulu.");
+
+        alert(
+            "Silakan lengkapi semua data terlebih dahulu."
+        );
+
         return;
     }
 
-    localStorage.setItem("keluhan", keluhan);
-    localStorage.setItem("gejala", gejala);
-    localStorage.setItem("durasi", durasi);
-    localStorage.setItem("tingkat", tingkat);
 
-    const semuaGejala = keluhan + " " + gejala;
+    localStorage.setItem(
+        "keluhan",
+        keluhan
+    );
 
-    const hasil = analisisGejala(semuaGejala);
+    localStorage.setItem(
+        "gejala",
+        gejala
+    );
+
+    localStorage.setItem(
+        "durasi",
+        durasi
+    );
+
+    localStorage.setItem(
+        "tingkat",
+        tingkat
+    );
+
+
+    const semuaGejala =
+        keluhan + " " + gejala;
+
+
+    const hasil =
+        analisisGejala(semuaGejala);
+
 
     localStorage.setItem(
         "hasilAnalisis",
-        JSON.stringify(hasil.slice(0, 5))
+        JSON.stringify(
+            hasil.slice(0, 5)
+        )
     );
 
-    window.location.href = "analisis.html";
+
+    window.location.href =
+        "analisis.html";
 }
 
 
@@ -641,26 +806,37 @@ function lanjutKeAnalisis() {
 // ======================================================
 
 function lihatHasil() {
-    window.location.href = "hasil.html";
+
+    window.location.href =
+        "hasil.html";
 }
 
+
+// ======================================================
+// MENAMPILKAN HASIL
+// ======================================================
 
 function tampilkanHasil() {
 
     const nama =
-        localStorage.getItem("nama") || "Pengguna";
+        localStorage.getItem("nama") ||
+        "Pengguna";
 
     const keluhan =
-        localStorage.getItem("keluhan") || "-";
+        localStorage.getItem("keluhan") ||
+        "-";
 
     const gejala =
-        localStorage.getItem("gejala") || "-";
+        localStorage.getItem("gejala") ||
+        "-";
 
     const durasi =
-        localStorage.getItem("durasi") || "-";
+        localStorage.getItem("durasi") ||
+        "-";
 
     const tingkat =
-        localStorage.getItem("tingkat") || "-";
+        localStorage.getItem("tingkat") ||
+        "-";
 
 
     const sapaan =
@@ -678,123 +854,82 @@ function tampilkanHasil() {
     const hasilTingkat =
         document.getElementById("hasilTingkat");
 
+
     if (sapaan) {
+
         sapaan.textContent =
-            "Halo, " + nama +
+            "Halo, " +
+            nama +
             ". Berikut hasil analisis awal berdasarkan informasi yang kamu masukkan.";
+
     }
+
 
     if (hasilKeluhan) {
+
         hasilKeluhan.textContent =
-            "Keluhan utama: " + keluhan;
+            "Keluhan utama: " +
+            keluhan;
+
     }
+
 
     if (hasilGejala) {
+
         hasilGejala.textContent =
-            "Gejala: " + gejala;
+            "Gejala: " +
+            gejala;
+
     }
+
 
     if (hasilDurasi) {
+
         hasilDurasi.textContent =
-            "Durasi: " + durasi;
+            "Durasi: " +
+            durasi;
+
     }
+
 
     if (hasilTingkat) {
+
         hasilTingkat.textContent =
-            "Tingkat keluhan: " + tingkat;
+            "Tingkat keluhan: " +
+            tingkat;
+
     }
 
 
-    // =========================
+    // ==================================================
     // HASIL PENYAKIT
-    // =========================
+    // ==================================================
 
     const hasilPenyakit =
         document.getElementById("hasilPenyakit");
 
-    if (hasilPenyakit) {
 
-        let hasil = [];
-
-        try {
-
-            hasil = JSON.parse(
-                localStorage.getItem("hasilAnalisis") || "[]"
-            );
-
-        } catch (error) {
-
-            hasil = [];
-
-        }
-
-
-        if (hasil.length === 0) {
-
-            hasilPenyakit.innerHTML = `
-                <h2>🔍 Hasil Analisis</h2>
-
-                <p>
-                    Belum ditemukan kecocokan yang cukup
-                    berdasarkan gejala yang dimasukkan.
-                </p>
-
-                <p>
-                    Jika keluhan berlanjut atau semakin berat,
-                    pertimbangkan untuk berkonsultasi dengan
-                    tenaga kesehatan.
-                </p>
-            `;
-
-        } else {
-
-            hasilPenyakit.innerHTML = `
-                <h2>🔍 Kemungkinan Kondisi</h2>
-
-                ${hasil.map(function (item) {
-
-                    return `
-                        <div class="hasil-box">
-
-                            <h3>${item.nama}</h3>
-
-                            <p>
-                                <strong>Gejala yang cocok:</strong>
-                                ${item.cocok.join(", ")}
-                            </p>
-
-                            <p>
-                                <strong>Skor kecocokan:</strong>
-                                ${item.skor}
-                            </p>
-
-                            <p>
-                                <strong>Saran awal:</strong>
-                                ${item.saran}
-                            </p>
-
-                        </div>
-                    `;
-
-                }).join("")}
-
-                <p>
-                    ⚠️ Hasil HealthMateAI merupakan analisis awal
-                    dan bukan diagnosis medis.
-                </p>
-            `;
-        }
+    if (!hasilPenyakit) {
+        return;
     }
-}
 
 
-// ======================================================
-// ANALISIS.HTML
-// ======================================================
+    let hasil = [];
 
-function tampilkanAnalisis() {
 
-    const status =
-        document.getElementById("statusAnalisis");
+    try {
 
-    if (
+        hasil = JSON.parse(
+            localStorage.getItem(
+                "hasilAnalisis"
+            ) || "[]"
+        );
+
+    } catch (error) {
+
+        hasil = [];
+
+    }
+
+
+    i
